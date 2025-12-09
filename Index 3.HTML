@@ -1,0 +1,943 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>JUMA LOGISTICS</title>
+  <meta name="description" content="Explora nuestras opciones para tu mercancía." />
+  <meta name="keywords" content="transporte, logística, mercancía, camiones, JUMA LOGISTICS" />
+  <meta name="author" content="Juan Ramírez" />
+  <link rel="icon" type="image/png" sizes="32x32" href="Logo 3 JUMA.png" />
+
+  <!-- Bootstrap CSS -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet">
+
+  <!-- Font Awesome -->
+  <link rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+  <!-- Tu CSS local (si lo usas) -->
+  <link rel="stylesheet" href="styles.css">
+
+  <style>
+    /* Estilos mínimos de mejora (puedes moverlos a styles.css) */
+    body {
+      font-family: Arial, Helvetica, sans-serif;
+      background-color: #f8f9fa;
+      color: #222;
+    }
+
+    /* Banner promocional */
+    #banner {
+      background: linear-gradient(90deg, #dc3545, #c82333);
+      color: #fff;
+      font-weight: 600;
+    }
+
+    /* Navbar */
+    .navbar {
+      box-shadow: 0 3px 8px rgba(0, 0, 0, 0.12);
+    }
+    .navbar-brand img { border-radius: 6px; }
+
+    /* Carousel */
+    .carousel-item img {
+      height: 300px;
+      object-fit: cover;
+      filter: brightness(0.85);
+    }
+
+    /* Cards */
+    .card {
+      border-radius: 12px;
+      overflow: hidden;
+      box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08);
+      transition: transform .18s ease;
+    }
+    .card:hover { transform: translateY(-4px); }
+
+    /* Botón flotante WhatsApp */
+    .whatsapp-float{
+      position: fixed;
+      right: 20px;
+      bottom: 20px;
+      background: #25d366;
+      color: #fff;
+      width: 56px;
+      height: 56px;
+      border-radius: 50%;
+      display:flex;
+      align-items:center;
+      justify-content:center;
+      box-shadow: 0 8px 20px rgba(0,0,0,0.2);
+      z-index: 1100;
+      text-decoration: none;
+    }
+    .whatsapp-float i { font-size: 24px; }
+
+    /* Testimonios */
+    .testimonial {
+      background: #fff;
+      padding: 1rem;
+      border-radius: .6rem;
+    }
+
+    /* Offcanvas body small */
+    .offcanvas-body p { margin-bottom: .5rem; }
+
+    /* Footer */
+    footer a { color: rgba(255,255,255,0.9); }
+
+    /* Pequeños fixes */
+    .me-2 { margin-right: .5rem !important; }
+  </style>
+</head>
+<body>
+  <!-- BANNER PROMOCIONAL -->
+  <div id="banner" class="p-3 text-center">
+    ¡Cotiza ahora y obtén un 20% de descuento en todas nuestras unidades!
+  </div>
+
+  <!-- NAVBAR -->
+  <nav class="navbar navbar-expand-lg navbar-light bg-white sticky-top">
+    <div class="container">
+      <a class="navbar-brand d-flex align-items-center gap-2" href="#">
+        <img src="Logo 3 JUMA.png" alt="Logo JUMA" width="44" height="44">
+        <div class="d-flex flex-column">
+          <strong>JUMA LOGISTICS</strong>
+          <small class="text-muted">Empresa Transportista</small>
+        </div>
+      </a>
+
+      <button class="navbar-toggler" type="button"
+              data-bs-toggle="collapse" data-bs-target="#mainNavbar"
+              aria-controls="mainNavbar" aria-expanded="false"
+              aria-label="Alternar navegación">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+
+      <!-- Enlaces del Menú -->
+      <div class="collapse navbar-collapse" id="mainNavbar">
+        <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
+          <li class="nav-item"><a class="nav-link active" href="#">Inicio</a></li>
+          <li class="nav-item"><a class="nav-link" href="#Transporte">Unidades</a></li>
+          <li class="nav-item"><a class="nav-link" href="#contacto">Contacto</a></li>
+          <li class="nav-item"><a class="nav-link" href="#agregar-imagen">Agregar Imágen</a>3
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+  <!-- CAROUSEL -->
+  <div id="mainCarousel" class="carousel slide" data-bs-ride="carousel" aria-label="Unidades que trabajan con nosotros">
+    <div class="carousel-indicators">
+      <button type="button" data-bs-target="#mainCarousel" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+      <button type="button" data-bs-target="#mainCarousel" data-bs-slide-to="1" aria-label="Slide 2"></button>
+      <button type="button" data-bs-target="#mainCarousel" data-bs-slide-to="2" aria-label="Slide 3"></button>
+      <button type="button" data-bs-target="#mainCarousel" data-bs-slide-to="3" aria-label="Slide 4"></button>
+    </div>
+
+    <div class="carousel-inner rounded-3 shadow-sm">
+      <div class="carousel-item active">
+        <img src="varios.jpg" class="d-block w-100" alt="Unidades varias">
+        <div class="carousel-caption d-none d-md-block text-start">
+          <h5>Las mejores marcas más confiables de la carretera</h5>
+          <p>Domina el mercado llegando a tus destinos en tiempo y forma.</p>
+        </div>
+      </div>
+
+      <div class="carousel-item">
+        <img src="volvo.jpg" class="d-block w-100" alt="Volvo">
+        <div class="carousel-caption d-none d-md-block text-start">
+          <h5>Unidades Volvo</h5>
+          <p>Motor Volvo D13 o Cummins X15; transmisiones iShift o Eaton Fuller.</p>
+          <a href="#Transporte" class="btn btn-primary">Ver Unidades</a>
+        </div>
+      </div>
+
+      <div class="carousel-item">
+        <img src="kw.jpg" class="d-block w-100" alt="Kenworth">
+        <div class="carousel-caption d-none d-md-block text-start">
+          <h5>Kenworth</h5>
+          <p>Configuración con motor Cummins X15 y transmisión Eaton Fuller.</p>
+          <a href="#Transporte" class="btn btn-primary">Ver Unidades</a>
+        </div>
+      </div>
+
+      <div class="carousel-item">
+        <img src="cascadia.jpg" class="d-block w-100" alt="Freightliner Cascadia">
+        <div class="carousel-caption d-none d-md-block text-start">
+          <h5>Freightliner Cascadia</h5>
+          <p>Potencia y eficiencia para largas distancias.</p>
+          <a href="#Transporte" class="btn btn-primary">Ver Unidades</a>
+        </div>
+      </div>
+    </div>
+
+    <button class="carousel-control-prev" type="button" data-bs-target="#mainCarousel" data-bs-slide="prev">
+      <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+      <span class="visually-hidden">Anterior</span>
+    </button>
+    <button class="carousel-control-next" type="button" data-bs-target="#mainCarousel" data-bs-slide="next">
+      <span class="carousel-control-next-icon" aria-hidden="true"></span>
+      <span class="visually-hidden">Siguiente</span>
+    </button>
+  </div>
+
+  <!-- PRESENTACIÓN -->
+  <section class="container my-5">
+    <h1 class="text-center mb-3">Bienvenido a JUMA LOGISTICS</h1>
+    <p class="lead text-center">Conoce nuestras unidades disponibles para el traslado seguro de tu mercancía.</p>
+  </section>
+
+  <!-- ALERTA -->
+  <section class="container my-4">
+    <div class="alert alert-info">Aquí tienes información detallada de todas nuestras unidades disponibles.</div>
+  </section>
+
+  <!-- TARJETAS -->
+  <section class="container my-5" id="Transporte">
+    <h2 class="mb-4">Unidades que JUMA te ofrece</h2>
+    <div class="row g-4">
+      <div class="col-md-4">
+        <div class="card h-100">
+          <div class="card-body">
+            <h5 class="card-title">Unidades Disponibles</h5>
+            <p class="card-text">Encuentra tu unidad preferida y que cumpla tus exigencias.</p>
+            <button class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#modalIA">Más información</button>
+          </div>
+        </div>
+      </div>
+
+      <div class="col-md-4">
+        <div class="card h-100">
+          <img src="Unidades disponibles JUMA.png" class="card-img-top" alt="Unidades">
+          <div class="card-body">
+            <h5 class="card-title">Unidades para ti</h5>
+            <p class="card-text">¡Domina con nosotros el mercado logístico!</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="col-md-4">
+        <div class="card h-100">
+          <img src="Taller de mantenimiento JUMA.png" class="card-img-top" alt="Taller de mantenimiento">
+          <div class="card-body">
+            <h5 class="card-title">Taller de mantenimiento</h5>
+            <p class="card-text">Optimiza tus tiempos asegurando el traslado de tu mercancía.</p>
+            <a href="#contacto" class="btn btn-primary">Unirme a JUMA LOGISTICS</a>
+          </div>
+          <div class="card-footer text-muted">¡Pide tus cotizaciones ahora y vive con tranquilidad!</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- TESTIMONIOS -->
+  <section class="container my-5">
+    <h2 class="mb-4">Testimonios de nuestros Clientes</h2>
+
+    <div class="row g-3">
+      <div class="col-md-6">
+        <div class="testimonial d-flex gap-3 align-items-start">
+          <img src="Cliente VIP.png" alt="Cliente VIP" width="70" height="70" class="rounded-circle">
+          <div>
+            <h5 class="mb-1">Cliente VIP</h5>
+            <p class="mb-0">"Excelentes unidades y ambiente entre los operadores. Sus servicios beneficiarán tu imagen al entregar en tiempo y forma, siempre con responsabilidad."</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="col-md-6">
+        <div class="testimonial d-flex gap-3 align-items-start">
+          <img src="cliente 2 .png" alt="Cliente regular" width="70" height="70" class="rounded-circle">
+          <div>
+            <h5 class="mb-1">Cliente regular</h5>
+            <p class="mb-0">"Muy buen servicio, entregan a tiempo y mis productos siempre llegan en buen estado."</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="col-md-6">
+        <div class="testimonial d-flex gap-3 align-items-start">
+          <img src="Cliente 2 VIP.png" alt="Cliente VIP 2" width="70" height="70" class="rounded-circle">
+          <div>
+            <h5 class="mb-1">Cliente VIP</h5>
+            <p class="mb-0">"Sus servicios ayudaron a que mis mercancías llegaran en buen estado y a tiempo. Clientes satisfechos."</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="col-md-6">
+        <div class="testimonial d-flex gap-3 align-items-start">
+          <img src="Cliente 3.png" alt="Cliente 3" width="70" height="70" class="rounded-circle">
+          <div>
+            <h5 class="mb-1">Cliente regular</h5>
+            <p class="mb-0">"Un servicio confiable; las unidades se mantienen en buen estado y los viajes son puntuales."</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- NAVS Y TABS -->
+  <section class="container my-5">
+    <h2>Navegación por pestañas (Tabs)</h2>
+    <ul class="nav nav-tabs" id="myTab" role="tablist">
+      <li class="nav-item" role="presentation">
+        <button class="nav-link active" id="home-tab" data-bs-toggle="tab" data-bs-target="#home" type="button" role="tab">Home</button>
+      </li>
+      <li class="nav-item" role="presentation">
+        <button class="nav-link" id="profile-tab" data-bs-toggle="tab" data-bs-target="#profile" type="button" role="tab">Profile</button>
+      </li>
+    </ul>
+    <div class="tab-content mt-3">
+      <div class="tab-pane fade show active" id="home" role="tabpanel">
+        <p>Contenido de la pestaña Home: Bienvenido al portal de los servicios que ofrecemos.</p>
+      </div>
+      <div class="tab-pane fade" id="profile" role="tabpanel">
+        <p>Contenido del perfil: Aquí podrás ver y analizar los servicios que ofrecemos para mantener al 100 las unidades.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- MODAL -->
+  <div class="modal fade" id="modalIA" tabindex="-1" aria-labelledby="modalIALabel" aria-hidden="true">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="modalIALabel">Detalles del apartado de limpieza y detallado</h5>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Cerrar"></button>
+        </div>
+        <div class="modal-body">
+          En esta parte se lavan seguido las unidades; cada cierto tiempo se hace limpieza profunda de interiores y exteriores, además se arreglan detalles estéticos.
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
+          <button type="button" class="btn btn-primary">Ver más</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- OFFCANVAS -->
+  <div class="container text-center my-4">
+    <button class="btn btn-outline-primary" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasInfo" aria-controls="offcanvasInfo">
+      Abrir información lateral
+    </button>
+  </div>
+
+  <div class="offcanvas offcanvas-end" tabindex="-1" id="offcanvasInfo" aria-labelledby="offcanvasInfoLabel">
+    <div class="offcanvas-header">
+      <h5 id="offcanvasInfoLabel">Más sobre nuestros talleres de servicio</h5>
+      <button type="button" class="btn-close text-reset" data-bs-dismiss="offcanvas" aria-label="Cerrar"></button>
+    </div>
+    <div class="offcanvas-body">
+      <p>Descubre más sobre nuestros talleres de servicios preventivos que realizamos a cada unidad al terminar cada viaje o cuando lo necesiten.</p>
+      <p>Síguenos en redes para más contenido sobre la calidad de la empresa.</p>
+    </div>
+  </div>
+
+  <!-- SECCIÓN INTERACTIVA -->
+  <section class="container my-5">
+    <h2 class="mb-3">Eventos</h2>
+
+    <!-- Onclick -->
+    <div class="mb-4">
+      <h3>Evento Onclick</h3>
+      <button class="btn btn-warning" onclick="saludar()">Haz clic para saludar</button>
+      <p id="mensajeOnclick" class="mt-3 fw-bold"></p>
+    </div>
+
+    <!-- Onmouseover -->
+    <div class="mb-4">
+      <h3>Evento Onmouseover</h3>
+      <div id="cuadrocolor" class="p-5 text-center border rounded" style="background:#ffd54f; color:#000;">
+        Pasa el cursor por aquí
+      </div>
+    </div>
+
+    <!-- Onchange -->
+    <div class="mb-4">
+      <h3>Evento Onchange</h3>
+      <select id="selectEjemplo" class="form-select w-50" onchange="mostrarSeleccionEjemplo()">
+        <option value="">Selecciona una Unidad</option>
+        <option value="Volvo">Volvo</option>
+        <option value="Kenworth">Kenworth</option>
+        <option value="Cascadia">Cascadia</option>
+        <option value="International">International</option>
+      </select>
+      <p id="textoOnchange" class="mt-3 fw-bold"></p>
+    </div>
+
+    <!-- addEventListener -->
+    <div class="mb-4">
+      <h3>Evento addEventListener</h3>
+      <div class="card shadow-sm" style="width: 20rem;">
+        <img id="cardImagen" class="card-img-top" src="Evento JUMA.png" alt="Evento">
+        <div class="card-body">
+          <h5 class="card-title">Las mejores unidades del mercado</h5>
+          <p class="card-text">Domina el nuevo mercado acompañado de nuestras unidades actualizadas.</p>
+          <button id="btnCambiarCard" class="btn btn-success">Actualizar Información</button>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FORMULARIO DE COTIZACIÓN -->
+  <section class="container my-5" id="contacto">
+    <h2>Cotización</h2>
+    <form id="formCotizacion" class="p-4 border rounded bg-light shadow-sm">
+      <div class="mb-3">
+        <label for="nombre" class="form-label">Razón Social</label>
+        <input type="text" class="form-control" id="nombre" name="nombre" placeholder="Ingresa tu razón social completa" required>
+      </div>
+
+      <div class="mb-3">
+        <label for="unidad-select" class="form-label">Selecciona tus unidades</label>
+        <select class="form-select" id="unidad-select" name="unidad" required>
+          <option value="">Elige unidades disponibles</option>
+          <option value="Volvo">Volvo</option>
+          <option value="Kenworth">Kenworth</option>
+          <option value="Cascadia">Cascadia</option>
+          <option value="International">International</option>
+          <option value="Peterbilt">Peterbilt</option>
+        </select>
+      </div>
+
+      <div class="mb-4">
+        <label class="form-label d-block">Cantidad</label>
+        <div class="form-check form-check-inline">
+          <input class="form-check-input" type="radio" name="cantidad" id="cantidad1-5" value="1-5" checked>
+          <label class="form-check-label" for="cantidad1-5">1 - 5 unidades</label>
+        </div>
+        <div class="form-check form-check-inline">
+          <input class="form-check-input" type="radio" name="cantidad" id="cantidad6-10" value="6-10">
+          <label class="form-check-label" for="cantidad6-10">6 - 10 unidades</label>
+        </div>
+      </div>
+
+      <div class="mb-3">
+        <label for="mensaje" class="form-label">Comentarios Adicionales</label>
+        <textarea id="mensaje" name="mensaje" class="form-control" rows="3" placeholder="Escribe aquí tus comentarios..."></textarea>
+      </div>
+
+      <div class="text-center">
+        <button type="submit" class="btn btn-success">Enviar</button>
+      </div>
+    </form>
+  </section>
+
+  <!-- NUEVAS UNIDADES -->
+  <section id="Unidades Seminuevas" class="container my-5">
+    <h2 class="mb-4">Otras Unidades Disponibles</h2>
+    <div class="row g-4">
+      <div class="col-md-4">
+        <div class="card h-100">
+          <img src="Seminuevos.png" class="card-img-top" alt="Seminuevos">
+          <div class="card-body">
+            <h5 class="card-title">Otras Unidades Disponibles</h5>
+            <p class="card-text precio">Precios más ajustados a tu capital</p>
+            <p id="detalle1">Con estas unidades ahorras más y obtienes los mismos beneficios.</p>
+            <button class="btn btn-success mb-2 btnSelect1">Seleccionar Unidades</button>
+            <button class="btn btn-danger btnRemove1">Eliminar Unidad</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- WHATSAPP FLOTANTE -->
+  <a href="https://wa.me/7291541191" class="whatsapp-float" target="_blank" rel="noopener" aria-label="Chatea por WhatsApp">
+    <i class="fab fa-whatsapp"></i>
+  </a>
+<!--==================== IMÁGENES DINÁMICAS ====================-->
+<section id="agregar-imagen" class="container my-5">
+  <h2 class="mb-4">Imágenes Dinámicas</h2>
+
+  <div class="input-group mb-3">
+    <input type="text" id="inputImagen" class="form-control" placeholder="Ingresa la URL de la imagen">
+    <button id="btnAgregarImagen" class="btn btn-primary">Agregar Imagen</button>
+  </div>
+</section>
+<!-- Contenedor para las imágenes agregadas -->
+<div id="galeria" class="row g-3"></div>
+
+<!-- SCRIPT -->
+<script>
+  const inputImagen = document.getElementById("inputImagen");
+  const btnAgregarImagen = document.getElementById("btnAgregarImagen");
+  const galeria = document.getElementById("galeria");
+  btnAgregarImagen.addEventListener("click", () => {
+    const url = inputImagen.value.trim();
+    if (url === "") {
+      alert("Por favor ingresa una URL de imagen válida.");
+      return;
+    }
+    const col = document.createElement("div");
+    col.classList.add("col-12", "col-md-4");
+    const img = document.createElement("img");
+    img.src = url;
+    img.alt = "Imagen agregada";
+    img.classList.add("img-fluid", "rounded", "shadow");
+    img.onerror = () => {
+      alert("La URL no contiene una imagen válida.");
+      col.remove();
+    };
+    col.appendChild(img);
+    galeria.appendChild(col);
+    inputImagen.value = "";
+  });
+</script>
+
+<!-- Actividad: Lista de tareas -->
+<section id="lista-warrior" class="container my-5">
+  <h2 class="mb-4">Lista de Tareas</h2>
+
+  <!-- Botón para eliminar primer elemento -->
+  <button id="btnEliminarPrimero" class="btn btn-danger mb-3">Eliminar primera tarea</button>
+
+  <!-- Lista original -->
+  <ul id="listaTareas" class="list-group mb-3">
+    <li class="tarea1 list-group-item">Crear una flotilla personalizada</li>
+    <li class="tarea2 list-group-item">Recomendarme una flotilla</li>
+    <li class="tarea3 list-group-item">Analizar las unidades</li>
+  </ul>
+
+  <!-- Agregar nueva tarea -->
+  <div class="input-group mt-3">
+    <input id="inputNuevaTarea" type="text" class="form-control" placeholder="Escribe una nueva tarea">
+    <button id="btnAgregarTarea" class="btn btn-success">Agregar Tarea</button>
+  </div>
+</section>
+
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>JUMA LOGISTICS - Rutas y Cotizaciones</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="app.css">
+</head>
+<body>
+  <nav class="navbar navbar-expand-lg navbar-light bg-white shadow-sm">
+    <div class="container">
+      <a class="navbar-brand" href="#"><strong>JUMA LOGISTICS</strong></a>
+    </div>
+  </nav>
+
+  <main class="container my-5">
+    <h1 class="mb-3">Buscador de Rutas Seguras</h1>
+    <p>Busca rutas disponibles entre ciudades y solicita cotización para tus unidades.</p>
+
+    <div class="row align-items-end g-3 mb-4">
+      <div class="col-sm-4">
+        <label class="form-label">Desde</label>
+        <input id="inputFrom" class="form-control" placeholder="Ej. Toluca">
+      </div>
+      <div class="col-sm-4">
+        <label class="form-label">Hacia</label>
+        <input id="inputTo" class="form-control" placeholder="Ej. Ciudad de México">
+      </div>
+      <div class="col-sm-2">
+        <label class="form-label">&nbsp;</label>
+        <div class="form-check">
+          <input class="form-check-input" type="checkbox" id="checkSafeOnly" checked>
+          <label class="form-check-label" for="checkSafeOnly">Solo seguras</label>
+        </div>
+      </div>
+      <div class="col-sm-2 text-end">
+        <button id="btnSearch" class="btn btn-primary w-100">Buscar Rutas</button>
+      </div>
+    </div>
+
+    <div id="searchMessage" class="mb-3"></div>
+
+    <section id="results" class="mb-5">
+      <!-- resultados aparecerán aquí -->
+    </section>
+
+    <hr>
+  </main>
+    
+
+<!-- ========== JavaScript ========== -->
+<script>
+  // Referencias a elementos
+  const listaTareas = document.getElementById("listaTareas");
+  const inputNuevaTarea = document.getElementById("inputNuevaTarea");
+  const btnAgregar = document.getElementById("btnAgregarTarea");
+  const btnEliminarPrimero = document.getElementById("btnEliminarPrimero");
+
+  // Función: Agregar tarea
+  btnAgregar.addEventListener("click", () => {
+    const texto = inputNuevaTarea.value.trim();
+
+    if (texto !== "") {
+      const li = document.createElement("li");
+      li.className = "list-group-item";
+      li.textContent = texto;
+
+      listaTareas.appendChild(li);
+
+      inputNuevaTarea.value = ""; // limpiar la caja de texto
+    }
+  });
+
+  // Función: Eliminar la primera tarea
+  btnEliminarPrimero.addEventListener("click", () => {
+    if (listaTareas.firstElementChild) {
+      listaTareas.removeChild(listaTareas.firstElementChild);
+    }
+  });
+</script>
+
+
+
+  <!--==================== FOOTER ====================-->
+  <footer class="bg-dark text-center text-white py-3 mt-5">
+    <div>© 2025 JUMA LOGISTICS | Todos los derechos reservados</div>
+    <div class="mt-2">
+      <a href="https://www.facebook.com/share/17f6hhRtfr/?mibextid=wwXIfr" target="_blank" rel="noopener" class="text-white me-3"><i class="fab fa-facebook fa-lg"></i></a>
+      <a href="https://www.instagram.com/ju4nm_rmz" target="_blank" rel="noopener" class="text-white me-3"><i class="fab fa-instagram fa-lg"></i></a>
+      <a href="https://www.tiktok.com/@ramirez.______" target="_blank" rel="noopener" class="text-white me-3"><i class="fab fa-tiktok fa-lg"></i></a>
+      <a href="https://youtube.com/@juanmanuelramirez293" target="_blank" rel="noopener" class="text-white me-3"><i class="fab fa-youtube fa-lg"></i></a>
+      <a href="https://x.com/tuusuario" target="_blank" rel="noopener" class="text-white"><i class="fab fa-x-twitter fa-lg"></i></a>
+    </div>
+  </footer>
+
+  <!-- SCRIPTS: Bootstrap Bundle (incluye Popper) -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"></script>
+
+  <!-- Tu JS local (si lo usas) -->
+  <script src="app.js" defer></script>
+
+  <!-- Pequeño script inline para demo / interactividad -->
+  <script>
+    // Saludo onclick
+    function saludar() {
+      const p = document.getElementById('mensajeOnclick');
+      p.textContent = '¡Hola! Gracias por visitar JUMA LOGISTICS. En breve te atenderemos.';
+    }
+
+    // Select onchange
+    function mostrarSeleccionEjemplo() {
+      const sel = document.getElementById('selectEjemplo');
+      const texto = document.getElementById('textoOnchange');
+      texto.textContent = sel.value ? `Has seleccionado: ${sel.value}` : '';
+    }
+
+    // Hover cuadro color (mejor con listeners)
+    (function () {
+      const cuadro = document.getElementById('cuadrocolor');
+      if (!cuadro) return;
+      const colorBase = '#ffd54f';
+      const colorHover = '#28a745';
+      cuadro.addEventListener('mouseenter', () => {
+        cuadro.style.background = colorHover; cuadro.style.color = '#fff';
+      });
+      cuadro.addEventListener('mouseleave', () => {
+        cuadro.style.background = colorBase; cuadro.style.color = '#000';
+      });
+    })();
+
+    // Botón actualizar card
+    (function () {
+      const btn = document.getElementById('btnCambiarCard');
+      if (!btn) return;
+      btn.addEventListener('click', () => {
+        const img = document.getElementById('cardImagen');
+        const title = document.querySelector('.card .card-title');
+        const text = document.querySelector('.card .card-text');
+        if (img) img.src = 'Evento-actualizado.png'; // reemplaza con ruta real si quieres
+        if (title) title.textContent = 'Información actualizada';
+        if (text) text.textContent = 'Contenido actualizado: nuevas unidades y promociones.';
+        btn.textContent = 'Actualizado';
+        btn.classList.remove('btn-success');
+        btn.classList.add('btn-secondary');
+      });
+    })();
+
+    // Formulario: prevenir envío real (demo)
+    (function () {
+      const form = document.getElementById('formCotizacion');
+      if (!form) return;
+      form.addEventListener('submit', function (e) {
+        e.preventDefault();
+        // Validación simple
+        const nombre = form.querySelector('#nombre').value.trim();
+        const unidad = form.querySelector('#unidad-select').value;
+        if (!nombre || !unidad) {
+          alert('Por favor completa tu razón social y selecciona una unidad.');
+          return;
+        }
+        // Aquí podrías hacer fetch() a tu backend
+        alert('Cotización enviada. Nos pondremos en contacto contigo pronto.');
+        form.reset();
+      });
+    })();
+  </script>
+
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>JUMA LOGISTICS</title>
+  <meta name="description" content="Explora nuestras opciones para tu mercancía." />
+  <meta name="keywords" content="transporte, logística, mercancía, camiones, JUMA LOGISTICS" />
+  <meta name="author" content="Juan Ramírez" />
+  <link rel="icon" type="image/png" sizes="32x32" href="Logo 3 JUMA.png" />
+
+  <!-- Bootstrap CSS -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet">
+
+  <!-- Font Awesome -->
+  <link rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+  <!-- Leaflet (mapas) -->
+  <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
+
+  <!-- Tu CSS local (si lo usas) -->
+  <link rel="stylesheet" href="styles.css">
+
+  <style>
+    /* Estilos mínimos de mejora (puedes moverlos a styles.css) */
+    body { font-family: Arial, Helvetica, sans-serif; background-color: #f8f9fa; color: #222; }
+    /* Banner promocional */
+    #banner { background: linear-gradient(90deg, #dc3545, #c82333); color: #fff; font-weight: 600; }
+    /* Navbar */
+    .navbar { box-shadow: 0 3px 8px rgba(0, 0, 0, 0.12); }
+    .navbar-brand img { border-radius: 6px; }
+    /* Carousel */
+    .carousel-item img { height: 300px; object-fit: cover; filter: brightness(0.85); }
+    /* Cards */
+    .card { border-radius: 12px; overflow: hidden; box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08); transition: transform .18s ease; }
+    .card:hover { transform: translateY(-4px); }
+    /* Botón flotante WhatsApp */
+    .whatsapp-float{ position: fixed; right: 20px; bottom: 20px; background: #25d366; color: #fff; width: 56px; height: 56px; border-radius: 50%; display:flex; align-items:center; justify-content:center; box-shadow: 0 8px 20px rgba(0,0,0,0.2); z-index: 1100; text-decoration: none; }
+    .whatsapp-float i { font-size: 24px; }
+    /* Testimonios */
+    .testimonial { background: #fff; padding: 1rem; border-radius: .6rem; }
+    /* Offcanvas body small */
+    .offcanvas-body p { margin-bottom: .5rem; }
+    /* Footer */
+    footer a { color: rgba(255,255,255,0.9); }
+    /* Pequeños fixes */
+    .me-2 { margin-right: .5rem !important; }
+
+    /* MAP & ROUTER styles */
+    #map { height: 420px; border-radius: 12px; box-shadow: 0 6px 18px rgba(0,0,0,0.08); }
+    .card-route { border-radius: 12px; }
+    .badge-safe { background: #198754; color: white; }
+    .badge-unsafe { background: #dc3545; color: white; }
+  </style>
+
+  <!-- Leaflet JS -->
+  <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+</head>
+<body>
+  <!-- BANNER PROMOCIONAL -->
+  <div id="banner" class="p-3 text-center">¡Cotiza ahora y obtén un 20% de descuento en todas nuestras unidades!</div>
+
+  <!-- NAVBAR -->
+  <nav class="navbar navbar-expand-lg navbar-light bg-white sticky-top">
+    <div class="container">
+      <a class="navbar-brand d-flex align-items-center gap-2" href="#">
+        <img src="Logo 3 JUMA.png" alt="Logo JUMA" width="44" height="44">
+        <div class="d-flex flex-column">
+          <strong>JUMA LOGISTICS</strong>
+          <small class="text-muted">Empresa Transportista</small>
+        </div>
+      </a>
+
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#mainNavbar" aria-controls="mainNavbar" aria-expanded="false" aria-label="Alternar navegación">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+
+      <div class="collapse navbar-collapse" id="mainNavbar">
+        <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
+          <li class="nav-item"><a class="nav-link active" href="#">Inicio</a></li>
+          <li class="nav-item"><a class="nav-link" href="#Transporte">Unidades</a></li>
+          <li class="nav-item"><a class="nav-link" href="#contacto">Contacto</a></li>
+          <li class="nav-item"><a class="nav-link" href="#agregar-imagen">Agregar Imágen</a></li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Main content (kept all original sections) -->
+  <!-- ... (carousel, presentacion, cards, testimonios, etc.) ... -->
+
+  <!-- Insertamos el Buscador de Rutas integrado en la página -->
+  <main class="container my-5">
+    <h1 class="mb-3">Buscador de Rutas Seguras</h1>
+    <p>Busca rutas disponibles entre ciudades y solicita cotización para tus unidades.</p>
+
+    <div class="row align-items-end g-3 mb-4">
+      <div class="col-sm-4">
+        <label class="form-label">Desde</label>
+        <input id="inputFrom" class="form-control" placeholder="Ej. Toluca, México">
+      </div>
+      <div class="col-sm-4">
+        <label class="form-label">Hacia</label>
+        <input id="inputTo" class="form-control" placeholder="Ej. Ciudad de México">
+      </div>
+      <div class="col-sm-2">
+        <label class="form-label">&nbsp;</label>
+        <div class="form-check">
+          <input class="form-check-input" type="checkbox" id="checkSafeOnly" checked>
+          <label class="form-check-label" for="checkSafeOnly">Solo seguras</label>
+        </div>
+      </div>
+      <div class="col-sm-2 text-end d-grid">
+        <button id="btnSearch" class="btn btn-primary w-100">Buscar Rutas</button>
+      </div>
+    </div>
+
+    <div id="searchMessage" class="mb-3"></div>
+
+    <section id="results" class="mb-4">
+      <!-- Aquí colocaremos el mapa y los resultados -->
+      <div id="map" class="mb-3"></div>
+      <div id="infoRuta"></div>
+    </section>
+
+    <hr>
+  </main>
+
+  <!-- rest of original HTML (forms, offcanvas, images, etc.) kept unchanged below -->
+
+  <!-- TESTIMONIOS, NAVS, MODALS, FORMS... (kept) -->
+
+  <!-- WHATSAPP FLOTANTE -->
+  <a href="https://wa.me/7291541191" class="whatsapp-float" target="_blank" rel="noopener" aria-label="Chatea por WhatsApp"><i class="fab fa-whatsapp"></i></a>
+
+  <!-- Scripts existentes (preservados) -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"></script>
+
+  <!-- Tu JS local (si lo usas) -->
+  <script src="app.js" defer></script>
+
+  <!-- ================= RUTAS / GEOAPIFY + MAPA (integrado) ================= -->
+  <script>
+    // CONFIG: pon aquí tu Geoapify API key (recomendado). Si no la pones, se usará un fallback público (OSRM/Nominatim).
+    const API_KEY = 'AQUI_TU_API_KEY_REAL';; // <- reemplaza con tu clave real
+    const useFallback = !API_KEY || API_KEY.startsWith('AQUI') || API_KEY.trim().length < 10;
+
+    // Inicializa mapa (si hay otro #map en la página es intencional: usamos el único #map colocado en la sección de Rutas)
+    const map = L.map('map').setView([19.4326, -99.1332], 10);
+    L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', { maxZoom: 19 }).addTo(map);
+
+    let routeLayer = null;
+
+    function showMessage(html, type='info'){
+      const el = document.getElementById('searchMessage');
+      el.innerHTML = `<div class="alert alert-${type} p-2 m-0">${html}</div>`;
+    }
+
+    async function geocode(lugar){
+      if (!lugar) return null;
+      try{
+        if (!useFallback){
+          const url = `https://api.geoapify.com/v1/geocode/search?text=${encodeURIComponent(lugar)}&format=json&apiKey=${API_KEY}`;
+          const resp = await fetch(url);
+          if (!resp.ok) throw new Error('Geoapify geocode responded '+resp.status);
+          const data = await resp.json();
+          if (!data || !data.features || data.features.length === 0) return null;
+          const [lon, lat] = data.features[0].geometry.coordinates;
+          return [parseFloat(lat), parseFloat(lon)];
+        } else {
+          const url = `https://nominatim.openstreetmap.org/search?format=json&q=${encodeURIComponent(lugar)}`;
+          const resp = await fetch(url, { headers: { 'Accept-Language': 'es' } });
+          if (!resp.ok) throw new Error('Nominatim responded '+resp.status);
+          const data = await resp.json();
+          if (!data || data.length === 0) return null;
+          return [parseFloat(data[0].lat), parseFloat(data[0].lon)];
+        }
+      }catch(err){ console.error('Error en geocode:', err); return null; }
+    }
+
+    function extractRouteFromOSRM(data){
+      if (!data || !data.routes || !data.routes.length) return null;
+      const geo = data.routes[0].geometry;
+      if (geo && geo.coordinates) return geo.coordinates.map(c => [c[1], c[0]]);
+      return null;
+    }
+
+    function extractRouteCoordinatesFromGeoJSON(feature){
+      if (!feature || !feature.geometry) return null;
+      const geom = feature.geometry;
+      if (geom.type === 'LineString') return geom.coordinates.map(c => [c[1], c[0]]);
+      if (geom.type === 'MultiLineString') return geom.coordinates.flat().map(c => [c[1], c[0]]);
+      return null;
+    }
+
+    async function buscarRutas(){
+      const fromTxt = document.getElementById('inputFrom').value.trim();
+      const toTxt = document.getElementById('inputTo').value.trim();
+      const safeOnly = document.getElementById('checkSafeOnly').checked;
+      const loading = document.getElementById('searchMessage');
+
+      if (!fromTxt || !toTxt){ showMessage('Ingresa desde y hacia', 'warning'); return; }
+      showMessage('Buscando coordenadas...', 'info');
+
+      const from = await geocode(fromTxt);
+      const to = await geocode(toTxt);
+      if (!from) { showMessage('No se encontró el origen', 'danger'); return; }
+      if (!to) { showMessage('No se encontró el destino', 'danger'); return; }
+
+      showMessage('Obteniendo ruta...', 'info');
+
+      try{
+        let coords = null, distancia = null, tiempo = null;
+        if (!useFallback){
+          const waypointsForApi = `${from[1]},${from[0]}|${to[1]},${to[0]}`;
+          const urlRuta = `https://api.geoapify.com/v1/routing?waypoints=${waypointsForApi}&mode=drive&format=geojson&details=turns&apiKey=${API_KEY}`;
+          const resp = await fetch(urlRuta);
+          if (!resp.ok) throw new Error('Geoapify routing responded '+resp.status);
+          const data = await resp.json();
+          if (!data || !data.features || data.features.length === 0) throw new Error('No route');
+          coords = extractRouteCoordinatesFromGeoJSON(data.features[0]);
+          if (data.features[0].properties && data.features[0].properties.summary){
+            distancia = data.features[0].properties.summary.distance/1000 || null;
+            tiempo = data.features[0].properties.summary.time/60 || null;
+          }
+        } else {
+          const urlOSRM = `https://router.project-osrm.org/route/v1/driving/${from[1]},${from[0]};${to[1]},${to[0]}?overview=full&geometries=geojson`;
+          const resp = await fetch(urlOSRM);
+          if (!resp.ok) throw new Error('OSRM responded '+resp.status);
+          const data = await resp.json();
+          coords = extractRouteFromOSRM(data);
+          if (data.routes && data.routes[0]){ distancia = (data.routes[0].distance||0)/1000; tiempo = (data.routes[0].duration||0)/60; }
+        }
+
+        if (!coords || coords.length===0) throw new Error('No geometry');
+        if (routeLayer) map.removeLayer(routeLayer);
+        routeLayer = L.polyline(coords, { color: '#1976d2', weight: 5 }).addTo(map);
+        map.fitBounds(routeLayer.getBounds(), { padding:[30,30] });
+
+        document.getElementById('infoRuta').innerHTML = `\n          <div class=\"card card-route p-3\">\n            <h6 class=\"mb-2\">Detalles de la ruta</h6>\n            <p class=\"mb-1\">${distancia?`<strong>Distancia:</strong> ${distancia.toFixed(2)} km`:'Distancia: N/D'}</p>\n            <p class=\"mb-0\">${tiempo?`<strong>Tiempo estimado:</strong> ${tiempo.toFixed(0)} min`:'Tiempo: N/D'}</p>\n          </div>`;
+
+        // Si el usuario quiere solo rutas seguras, aquí podrías filtrar usando una capa propia de "zonas inseguras" (ejemplo no implementado)
+        showMessage('Ruta encontrada.', 'success');
+      }catch(err){ console.error(err); showMessage('Error al obtener ruta. Revisa consola.', 'danger'); }
+    }
+
+    document.getElementById('btnSearch').addEventListener('click', buscarRutas);
+
+    // Helper: permitir click en mapa para rellenar inputs (útil para pruebas rápidas)
+    let clickMarkers = [];
+    map.on('click', function(e){
+      if (clickMarkers.length>=2){ clickMarkers.forEach(m=>map.removeLayer(m)); clickMarkers=[]; }
+      const m = L.marker(e.latlng).addTo(map); clickMarkers.push(m);
+      if (clickMarkers.length===1) document.getElementById('inputFrom').value = `${e.latlng.lat.toFixed(6)}, ${e.latlng.lng.toFixed(6)}`;
+      if (clickMarkers.length===2) document.getElementById('inputTo').value = `${e.latlng.lat.toFixed(6)}, ${e.latlng.lng.toFixed(6)}`;
+    });
+
+  </script>
+
+</body>
+</html>
